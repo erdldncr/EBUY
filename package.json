@@ -1,0 +1,24 @@
+{
+  "name": "mern-e-commerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erdldncr/EBUY.git"
+  },
+  "author": "Erdal Dincer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erdldncr/EBUY/issues"
+  },
+  "homepage": "https://github.com/erdldncr/EBUY#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.2"
+  }
+}
