@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import products from "../products";
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
 import Rating from "../components/Rating";
+import axios from "axios";
 const ProductScreen = (props) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   useEffect(() => {
-    setProduct(products.find((product) => product._id === id));
-  }, []);
+    const fetchProduct = async () => {
+      const { data } = await axios.get("/api/products/" + id);
+      setProduct(data);
+    };
+    fetchProduct();
+  }, [id]);
   return (
     <>
       <Link className="btn btn-light my-3">Go Back</Link>
@@ -23,7 +27,7 @@ const ProductScreen = (props) => {
             </ListGroup.Item>
             <ListGroup.Item>
               <Rating
-                value={product.rating}
+                value={product?.rating}
                 text={`${product.numReviews} reviews`}
               />
             </ListGroup.Item>
