@@ -12,8 +12,7 @@ export const getSingleProduct = asyncHandler(async (req, res, next) => {
   if (product) {
     return res.status(200).json(product);
   } else {
-    return res.status(404).json({
-      message: "Product not found",
-    });
+    res.status(404);
+    throw new Error("Product not found"); ///error olusturdm middleware erroru yakaliyr
   }
 });
