@@ -1,12 +1,19 @@
 import express from "express";
+import {
+  getAllProducts,
+  getSingleProduct,
+} from "../controllers/productController.js";
 const router = express.Router();
 
-router.get("/", (req, res) => res.json(products));
+//desc fetch all produccts
+//@route get api/prodducts
+//@access publicc
+router.get("/", getAllProducts);
 
-router.get("/:id", (req, res) => {
-  const { id } = req.params;
-  const product = products.find((product) => product._id === id);
-  res.json(product);
-});
+//desc fetch single produccts
+//@route get api/prodducts/:id
+//@access publicc
+
+router.get("/:id", getSingleProduct);
 
 export default router;

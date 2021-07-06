@@ -10,6 +10,11 @@ connectDB();
 
 const app = express();
 
+
+app.use(req,res,next)=>{
+  
+}
+
 app.use("/api/products", productRouter);
 
 const port = process.env.PORT || 5000;
