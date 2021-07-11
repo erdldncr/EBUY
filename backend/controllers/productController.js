@@ -1,13 +1,19 @@
 import Product from "../models/productModel.js";
 import asyncHandler from "express-async-handler";
 
-export const getAllProducts = asyncHandler(async (req, res, next) => {
+//desc fetch all produccts
+//@route get api/prodducts
+//@access publicc
+export const getProducts = asyncHandler(async (req, res, next) => {
   const products = await Product.find();
 
   return res.status(200).json(products);
 });
 
-export const getSingleProduct = asyncHandler(async (req, res, next) => {
+//desc fetch single produccts
+//@route get api/prodducts/:id
+//@access publicc
+export const getProductById = asyncHandler(async (req, res, next) => {
   const { id } = req.params;
 
   const product = await Product.findById(id);
