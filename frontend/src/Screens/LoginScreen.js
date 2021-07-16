@@ -22,7 +22,6 @@ export const LoginScreen = ({ location, history }) => {
   }, [history, userInfo, redirect]);
 
   const submitHandler = (e) => {
-    console.log("asdad");
     e.preventDefault();
     dispatch(login(email, password));
   };
